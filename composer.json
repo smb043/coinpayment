@@ -1,13 +1,13 @@
 {
-    "name": "kevupton/laravel-coinpayments",
+    "name": "mramitict/coinpayment",
     "description": "Coinpayments for Laravel",
     "keywords": ["laravel", "lumen", "coinpayments"],
-    "type": "Extension",
+    "type": "Package",
     "license": "MIT",
     "authors": [
         {
-            "name": "Kevin Upton",
-            "email": "uptonkg@gmail.com"
+            "name": "Amit Kumar",
+            "email": "mramitict@gmail.com"
         }
     ],
     "require": {
@@ -15,11 +15,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Kevupton\\LaravelCoinpayments\\": "src/Kevupton/LaravelCoinpayments/"
+            "Mramitict\\LaravelCoinpayments\\": "src/Mramitict/LaravelCoinpayments/"
         },
         "files": [
-            "src/Kevupton/LaravelCoinpayments/Helpers/helpers.php",
-            "src/Kevupton/LaravelCoinpayments/Helpers/constants.php"
+            "src/Mramitict/LaravelCoinpayments/Helpers/helpers.php",
+            "src/Mramitict/LaravelCoinpayments/Helpers/constants.php"
         ]
     },
     "minimum-stability": "stable",
