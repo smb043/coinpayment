@@ -7,7 +7,7 @@ Implementation of most of the CoinPayments functionality.
 
 ```php
 // add directly from the app 
-$app->register(\Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class);
+$app->register(\Mramitict\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class);
 ```
 
 OR
@@ -17,7 +17,7 @@ All service providers are registered in the `config/app.php` configuration file.
 'providers' => [
     // Other Service Providers
 
-    \Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
+    \Mramitict\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
 ],
 ```
 
