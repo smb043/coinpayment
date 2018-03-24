@@ -15,7 +15,7 @@ namespace Mramitict\LaravelCoinpayments\Models;
 class IpnDescriptor extends Model
 {
     public $fillable = [
-        'ipn_id', 'ref_id','address','txn_id',
+        'ipns_id', 'ref_id','address','txn_id',
         'currency', 'currency1', 'currency2',
         'amount', 'amount1', 'amount2', 'fee',
         'buyer_name', 'item_name', 'item_number',
@@ -24,27 +24,6 @@ class IpnDescriptor extends Model
     ];
 
     public function ipn() {
-        return $this->belongsTo(Ipn::class, 'ipn_id');
-    }
-
-    public function isComplete () {
-        // If $order_status is >100 or is 2, return true
-        return $this->status >= 100 || $this->status == 2;
-    }
-
-    public function isWithdrawal () {
-        return $this->ipn_type === 'withdrawal';
-    }
-
-    public function isApi () {
-        return $this->ipn_type === 'api';
-    }
-
-    public function isSimpleButton () {
-        return $this->ipn_type === 'simple';
-    }
-
-    public function isAdvancedButton () {
-        return $this->ipn_type === 'button';
+        return $this->belongsTo(Ipn::class, 'ipns_id');
     }
 }

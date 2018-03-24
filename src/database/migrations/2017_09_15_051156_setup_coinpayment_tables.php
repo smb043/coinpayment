@@ -78,7 +78,7 @@ class SetupCoinpaymentTables extends Migration
 
         Schema::create($prefix . 'ipn_descriptors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('ipn_id')->unsigned();
+            $table->bigInteger('ipns_id')->unsigned();
             $table->string('ref_id')->indexed()->nullable();
 
             $table->string('address')->indexed()->nullable();

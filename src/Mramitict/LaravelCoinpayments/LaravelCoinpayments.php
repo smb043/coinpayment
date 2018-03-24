@@ -127,6 +127,33 @@ class LaravelCoinpayments extends Coinpayments {
 
             $ipn->save();
 
+            $descriptor = $ipn->descriptor()->firstOrNew(['ipns_id' => $ipn->id]);
+
+            $descriptor->fill([
+                'ipns_id' => $ipn->id,
+                'ref_id' => isset($request['id'])?$request['id']:null,
+                'address' => isset($request['address'])?$request['address']:null,
+                'txn_id' => isset($request['txn_id'])?$request['txn_id']:null,
+                'currency' => isset($request['currency'])?$request['currency']:null,
+                'currency1' => isset($request['currency1'])?$request['currency1']:null,
+                'currency2' => isset($request['currency2'])?$request['currency2']:null,
+                'amount' => isset($request['amount'])?$request['amount']:null,
+                'amount1' => isset($request['amount1'])?$request['amount1']:null,
+                'amount2' => isset($request['amount2'])?$request['amount2']:null,
+                'fee' => isset($request['fee'])?$request['fee']:null,
+                'buyer_name' => isset($request['buyer_name'])?$request['buyer_name']:null,
+                'item_name' => isset($request['item_name'])?$request['item_name']:null,
+                'item_number' => isset($request['item_number'])?$request['item_number']:null,
+                'invoice' => isset($request['invoice'])?$request['invoice']:null,
+                'custom' => isset($request['custom'])?$request['custom']:null,
+                'send_tx' => isset($request['send_tx'])?$request['send_tx']:null,
+                'received_amount' => isset($request['received_amount'])?$request['received_amount']:null,
+                'received_confirms' => isset($request['received_confirms'])?$request['received_confirms']:null,
+                'description' => serialize($request)
+            ]);
+
+            $descriptor->save();
+
             
             // only return the ipn if it was successful, otherwise throw an exception
             // we do it like this so we can record the ipn either way.

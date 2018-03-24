@@ -31,12 +31,22 @@ class Ipn extends Model
 
     public function descriptor()
     {
-        return $this->hasOne(IpnDescriptor::class, 'ipn_id');
+        return $this->hasOne(IpnDescriptor::class, 'ipns_id');
+    }
+
+    public function isPending()
+    {
+        return !in_array($this->status, [100, 2, -1]);
     }
     
-    public function isComplete () {
+    public function isComplete() {
         // If $order_status is >100 or is 2, return true
         return $this->status >= 100 || $this->status == 2;
+    }
+
+    public function isFailed()
+    {
+        return ($this->status == -1);
     }
 
     public function isDeposit () {
