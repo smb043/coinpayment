@@ -133,7 +133,7 @@ class Coinpayments
      * @param string $ipnUrl Optionally set an IPN handler to receive notices about this transaction. If ipn_url is empty then it will use the default IPN URL in your account.
      * @return array|mixed
      */
-    public function createWithdrawal($amount, $currency, $address, $autoConfirm = false, $ipnUrl = '')
+    public function createWithdrawal($amount, $currency, $address, $dest_tag = null, $autoConfirm = false, $ipnUrl = '')
     {
         $req = array(
             'amount' => $amount,
@@ -142,6 +142,10 @@ class Coinpayments
             'auto_confirm' => $autoConfirm ? 1 : 0,
             'ipn_url' => $ipnUrl,
         );
+
+        if($dest_tag) {
+            $req['dest_tag'] = $dest_tag;
+        }
 
         return $this->apiCall(CoinpaymentsCommands::CREATE_WITHDRAWAL, $req);
     }

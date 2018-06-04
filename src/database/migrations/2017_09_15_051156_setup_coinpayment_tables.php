@@ -82,6 +82,7 @@ class SetupCoinpaymentTables extends Migration
             $table->string('ref_id')->indexed()->nullable();
 
             $table->string('address')->indexed()->nullable();
+	    $table->string('dest_tag')->indexed()->nullable();
             $table->string('txn_id')->indexed()->nullable();
             $table->string('currency')->nullable();
             $table->string('currency1')->nullable();
