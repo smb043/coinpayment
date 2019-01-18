@@ -23,7 +23,9 @@ class LaravelCoinpaymentsServiceProvider extends ServiceProvider {
 
         $this->loadMigrationsFrom(__DIR__ . '/../../../database/migrations');
 
-        class_alias(Coinpayments::class, 'Coinpayments');
+        if(!class_exists('Coinpayments')){
+            class_alias(Coinpayments::class, 'Coinpayments');
+        }
     }
 
     /**
