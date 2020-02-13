@@ -10,7 +10,7 @@ namespace Mramitict\LaravelCoinpayments\Models;
 
 class Log extends Model
 {
-    protected $table = 'log';
+    // protected $table = 'log';
 
     const LEVEL_ALL = 2;
     const LEVEL_ERROR = 1;
