@@ -1,5 +1,5 @@
 {
-    "name": "mramitict/coinpayment",
+    "name": "smb043/coinpayment",
     "description": "Coinpayments for Laravel",
     "keywords": ["laravel", "lumen", "coinpayments"],
     "type": "Package",
