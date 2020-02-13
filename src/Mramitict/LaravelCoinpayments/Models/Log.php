@@ -8,7 +8,7 @@
 
 namespace Mramitict\LaravelCoinpayments\Models;
 
-class Log extends Illuminate\Database\Eloquent\Model
+class Log extends \Illuminate\Database\Eloquent\Model
 {
     protected $table = 'cpts_log';
 
