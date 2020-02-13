@@ -8,9 +8,9 @@
 
 namespace Mramitict\LaravelCoinpayments\Models;
 
-class Log extends Model
+class Log extends Illuminate\Database\Eloquent\Model
 {
-    // protected $table = 'log';
+    protected $table = 'cpts_log';
 
     const LEVEL_ALL = 2;
     const LEVEL_ERROR = 1;
